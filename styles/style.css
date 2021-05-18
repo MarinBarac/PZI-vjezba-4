@@ -1,0 +1,182 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+    font-family: Georgia, serif;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #456990;
+    padding: 0.6rem 0.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: white;
+    align-items: center;
+}
+
+#search-container{
+    background-color: white;
+    padding: 0.3rem;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.search-icon{
+    color: gray;
+    background-color: white;
+}
+
+#search-box{
+    border: none;
+    font-size: inherit;
+}
+
+#search-box:focus{
+    outline: none;
+}
+
+main{
+    margin: auto;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+}
+
+nav{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links-container a{
+    display: inline-block;
+    background-color: #7baac7;
+    padding: 0.4rem;
+    color: white;
+    text-decoration: none;
+}
+
+.links-container a.selected{
+    border-bottom: 5px solid #456990;
+}
+
+#slider{
+    display: flex;
+    flex-direction: column;
+    /*flex-shrink: 1;*/
+}
+
+/*#main-picture-container{
+    flex-shrink: 1;
+}*/
+
+#main-picture-container img{
+    width: 100%;
+}
+
+#thumbnails-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+#thumbnails-container .selected{
+    border-bottom: 5px solid #456990;
+}
+
+.thumbnail:hover{
+    border-bottom: 5px solid rgba(69,105,144, 0.5);
+    cursor: pointer;
+}
+
+.thumbnail{
+    flex-shrink: 1;
+}
+
+.thumbnail img{
+    width: 100%;
+}
+
+#cards-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 0.7em;
+    grid-row-gap: 0.7em;
+    margin-bottom: 50px;
+}
+
+.card{
+    background-color: #C5C3C6;
+    position: relative;
+    padding: 4px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover{
+    transform: scale(1.01);
+    cursor: default
+}
+
+.card .delete-button{
+    position: absolute;
+    right: -2%;
+    top: -1.5%;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #7a7a7a;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+@media (max-width: 550px){
+
+    nav img{
+        display: none;
+    }
+
+    nav{
+        justify-content: center;
+    }
+
+    nav{
+        margin-bottom: 2%;
+    }
+}
+
+@media (max-width: 650px){
+    #cards-container{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 650px) and (max-width:950px){
+    #cards-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
